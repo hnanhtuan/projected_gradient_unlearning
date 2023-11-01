@@ -1,0 +1,15 @@
+model: allcnn
+dataset: cifar10
+unlearn_steps:
+- forget_range:
+  - - 0
+    - 500
+retained_var: 0.9
+start_lr: 0.1
+end_lr: 0.01
+loss_w: 1.0
+loss2_w: 0.2
+wd: 0
+offset: 0.05
+num_epochs: 100
+num_bins: 101

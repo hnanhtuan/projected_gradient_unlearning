@@ -1,0 +1,45 @@
+model: resnet18
+dataset: tinyimagenet
+unlearn_steps:
+- forget_range:
+  - - 0
+    - 500
+  - - 0
+    - 500
+  - - 0
+    - 500
+  - - 0
+    - 500
+  - - 0
+    - 500
+start_lr: 0.05
+end_lr: 0.01
+loss1_w: 1.0
+loss2_w: 0.2
+wd: 0.0
+offset: 0.05
+num_epochs: 100
+num_bins: 100
+learned_config: exp/learned/resnet18_tinyimagenet/full_data/config.yaml
+retained_var:
+  default: 0.95
+  layer1[0].conv1: 0.9
+  layer1[0].conv2: 0.9
+  layer1[1].conv1: 0.9
+  layer1[1].conv2: 0.9
+  layer2[0].conv2: 0.9
+  layer2[1].conv1: 0.9
+  layer2[1].conv2: 0.9
+  layer2[0].downsample[0]: 0.9
+  layer3[0].conv1: 0.9
+  layer3[0].conv2: 0.9
+  layer3[1].conv1: 0.9
+  layer3[1].conv2: 0.9
+  layer3[0].downsample[0]: 0.9
+  layer4[0].conv1: 0.9
+  layer4[0].conv2: 0.9
+  layer4[1].conv1: 0.9
+  layer4[1].conv2: 0.9
+  layer4[0].downsample[0]: 0.9
+  fc: 0.9
+save_model: 0

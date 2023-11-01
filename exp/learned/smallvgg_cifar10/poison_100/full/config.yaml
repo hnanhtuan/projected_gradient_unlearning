@@ -1,0 +1,56 @@
+paths:
+  log_name: exp/smallvgg_cifar10/poison_100/full
+  tensorboard: exp/smallvgg_cifar10/poison_100/full/tensorboard
+  checkpoint: exp/smallvgg_cifar10/poison_100/full/checkpoints
+params:
+  epochs: 200
+  num_workers: 6
+  batch_size: 256
+  log_interval: 50
+  
+dataset:
+  train:
+    name: datasets.PoisonCIFAR10
+    root: /home/data/
+    params:
+      data_set: train
+      download: true
+      num_poison: 100
+      data_section: full
+  test:
+    name: datasets.CIFAR10
+    root: /home/data/
+    params:
+      data_set: test
+      download: true
+net:
+  backbone: backbone.SmallVGG
+  params:
+    num_classes: 10
+    dropout: 0.5
+SGD:
+  method: optim.SGD
+  params:
+    lr: 0.01
+    momentum: 0.9
+    weight_decay: 0.0001
+Adam:
+  method: optim.Adam
+  params:
+    lr: 0.001
+    betas:
+    - 0.9
+    - 0.999
+    weight_decay: 0.0001
+optimizer:
+  method: optim.SGD
+  params:
+    lr: 0.01
+    momentum: 0.9
+    weight_decay: 0.0001
+scheduler:
+  method: CustomExponentialLR
+  params:
+    start_lr: 0.01
+    end_lr: 0.0005
+    num_steps: 200

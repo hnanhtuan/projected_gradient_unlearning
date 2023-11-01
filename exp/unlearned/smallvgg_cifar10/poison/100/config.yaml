@@ -1,0 +1,13 @@
+model: smallvgg
+dataset: cifar10
+num_poison: 100
+retained_var: 0.95
+start_lr: 0.1
+end_lr: 0.05
+loss1_w: 1.0
+loss2_w: 0.2
+wd: 0.0
+offset: 0.1
+num_epochs: 100
+ignore_last_layer: 0
+work_dir: exp/unlearned/smallvgg_cifar10/poison/100

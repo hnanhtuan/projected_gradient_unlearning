@@ -1,0 +1,52 @@
+paths:
+  dataset: /home/data/
+  log_name: exp/learned/resnet18_tinyimagenet/full_data
+  tensorboard: exp/learned/resnet18_tinyimagenet/full_data/tensorboard
+  checkpoint: exp/learned/resnet18_tinyimagenet/full_data/checkpoints
+params:
+  epochs: 200
+  num_workers: 8
+  batch_size: 256
+  log_interval: 50
+  image_size: 64
+dataset:
+  train:
+    name: datasets.UnlearnImageNet
+    root: /home/data/TinyImageNet/tiny-imagenet-200/train
+    params:
+      data_set: train
+      forget_range: []
+      data_section: full
+  test:
+    name: datasets.UnlearnImageNet
+    root: /home/data/TinyImageNet/tiny-imagenet-200/val
+    params:
+      data_set: test
+      data_section: full
+net:
+  backbone: backbone.Resnet18
+  params:
+    num_classes: 200
+    pretrained: false
+Adam:
+  method: optim.Adam
+  params:
+    lr: 0.001
+    betas:
+    - 0.9
+    - 0.999
+    weight_decay: 0.0002
+optimizer:
+  method: optim.Adam
+  params:
+    lr: 0.001
+    betas:
+    - 0.9
+    - 0.999
+    weight_decay: 0.0002
+scheduler:
+  method: CustomExponentialLR
+  params:
+    start_lr: 0.001
+    end_lr: 0.0001
+    num_steps: 200
