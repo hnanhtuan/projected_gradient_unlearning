@@ -1,8 +1,6 @@
 Learn to Unlearn for Deep Neural Networks: Minimizing Unlearning Interference with Gradient Projection
 ===========
 
-![alt text](images/masking_schemes.png)
-
 This is the Python implements of our methods accepted in [WACV 2024](https://wacv2024.thecvf.com/). [[pdf]]()
 
 
