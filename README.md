@@ -4,8 +4,8 @@ Learn to Unlearn for Deep Neural Networks: Minimizing Unlearning Interference wi
 This is the Python implements of our methods accepted in [WACV 2024](https://wacv2024.thecvf.com/). [[pdf]]()
 
 
-'scripts/learned.sh' Script to train models 
-'scripts/unlearned.sh' Script unlearn models. Please note that the trained (full training dataset) and retrained (with retaining dataset only) models are needed to be trained before the unlearning process in our code.
+**'scripts/learned.sh'**: Script to train models.  
+**'scripts/unlearned.sh'**: Script unlearn models. Please note that the trained (full training dataset) and retrained (with retaining dataset only) models are needed to be trained before the unlearning process in our code. The retrained model is used for evaluation only.
 
 
 ### BibTex
