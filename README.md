@@ -1,7 +1,7 @@
 Learn to Unlearn for Deep Neural Networks: Minimizing Unlearning Interference with Gradient Projection
 ===========
 
-This is the Python implements of our methods accepted in [WACV 2024](https://wacv2024.thecvf.com/). [[pdf]]()
+This is the Python implements of our methods accepted in [WACV 2024](https://wacv2024.thecvf.com/). [[pdf]](https://arxiv.org/abs/2312.04095)
 
 
 **'scripts/learned.sh'**: Script to train models.  
